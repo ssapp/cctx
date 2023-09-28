@@ -2,7 +2,7 @@ package cctx
 
 // Context is the main interface that combines ContextReader, ContentWriter, and ContextRemover.
 type Context interface {
-	ContentWriter
+	ContextWriter
 	ContextReader
 	ContextRemover
 }
@@ -14,7 +14,7 @@ type ContextReader interface {
 }
 
 // ContentWriter is the interface for writing values to the context.
-type ContentWriter interface {
+type ContextWriter interface {
 	// Set sets a value in the context with the given key.
 	Set(key string, value interface{})
 }
